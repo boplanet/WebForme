@@ -12,31 +12,24 @@ namespace WebForme
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
-
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
 
-
             if (ValidateUser(username, password))
             {
- 
                 Response.Redirect("Shop.aspx");
             }
             else
             {
-  
                 lblMessage.Text = "Pogrešno korisničko ime ili lozinka. Molimo pokušajte ponovno.";
             }
         }
 
         private bool ValidateUser(string username, string password)
         {
-
-
             string connectionString = "Data Source=RAZNO\\SQLEXPRESSPIN;Initial Catalog=WebFormsLabos;Integrated Security=True";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
